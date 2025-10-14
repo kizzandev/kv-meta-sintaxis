@@ -14,7 +14,6 @@
 | `[]`                                | Optional                          |
 | `()`                                | Grouping                          |
 | `CAPITALIZED`<br/>or<br/>`"quoted"` | Terminal                          |
-|                                     |                                   |
 
 Example:
 
@@ -82,10 +81,6 @@ Contributions welcome!
 
 Source available © 2025 • _KV Meta-Sintaxis Project_
 
-<br/>
-
----
-
-<br/>
+## 
 
 > Built with ❤️ by language designer, for language designers.
