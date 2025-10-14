@@ -1,0 +1,3 @@
+# Delays installation of newly released dependencies
+# 24 hours (1440 minutes)
+minimumReleaseAge: 2880
