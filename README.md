@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KV Meta-Sintaxis Web App 🧩
 
-## Getting Started
+**Interactive web tool for designing, visualizing, and analyzing the meta-syntax of custom programming languages.**
 
-First, run the development server:
+## ✨ Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**KV Meta-Sintaxis** is a browser-based tool that lets language designers **edit**, **visualize**, **analyze**, and **generate examples** from their own _meta-syntax_ definitions.
+
+| Notation                            | Definition                        |
+| ----------------------------------- | --------------------------------- |
+| `:`                                 | Define rule                       |
+| `\|`                                | Sequence of alternatives (one of) |
+| `{}`                                | Repetition (zero or more)         |
+| `[]`                                | Optional                          |
+| `()`                                | Grouping                          |
+| `CAPITALIZED`<br/>or<br/>`"quoted"` | Terminal                          |
+|                                     |                                   |
+
+Example:
+
+```kvms
+/;
+  ¡Comentario!
+;/
+
+expresión   : ["f" "="] igualdad   ; Comentario
+igualdad    : comparación {  ( "=" | "!="  ) comparación   }
+comparación : término     {  ( "<" | "<="  | ">="   | ">=" ) término }
+término     : factor      {  ( "+" | "-"   ) factor }
+factor      : unario      {  ( "*" | "/"   ) unario }
+unario      : primario    |  ( "-" | "!"   ) unario
+primario    : NÚMERO      | "(" expresión ")"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💻 Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contributions welcome!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Fork the repository
+2. Clone your fork
 
-## Learn More
+   ```bash
+   git clone <URL of your fork>
+   cd kv-meta-sintaxis
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Create your feature branch
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git switch -c feature/my-feature
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Commit your changes
 
-## Deploy on Vercel
+   ```bash
+   git add .
+   git commit -m "(feat) Rode a Dragon"
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Push to the branch
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   git push -u origin feature/my-feature
+   ```
+
+6. Open a pull request 🎉
+   - Go to your forked repository
+   - Create new Pull Request
+   - Provide a clear title and description
+     - What you did
+     - Why you did it
+     - Screenshots with before and after
+
+7. Address feedback and iterate (if applicable)
+   - When you push to your fork, PRs are automatically updated
+     - (I think)
+
+8. Merged! (maybe)
+   - Once approved, your Pull Request may be merged into the main project
+
+## 🧾 About the code
+
+Source available © 2025 • _KV Meta-Sintaxis Project_
+
+<br/>
+
+---
+
+<br/>
+
+> Built with ❤️ by language designer, for language designers.
