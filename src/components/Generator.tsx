@@ -21,7 +21,15 @@ export default function Generator() {
 
   return (
     <>
-      <small className="px-4 text-xs">Contributions welcomed!</small>
+      <small className="px-4 text-xs">
+        <a
+          href="https://github.com/kizzandev/kv-meta-sintaxis"
+          target="_blank"
+          className="cursor-pointer text-zinc-200 hover:text-blue-300"
+        >
+          Contributions welcomed!
+        </a>
+      </small>
       <div className="scrollbar h-full w-full overflow-auto bg-zinc-950 p-4 font-mono text-sm text-zinc-100">
         <pre>{pseudoCode}</pre>
       </div>
