@@ -55,7 +55,7 @@ export default function Railroad() {
           // return rr.Sequence(rr.Comment(expr.name), expanded);
           // return rr.Stack(rr.Comment(expr.name), expanded);
 
-          if ((cicle % 5) == 0) {
+          if (cicle % 5 == 0) {
             // return rr.Group(rr.Stack(rr.Comment(expr.name), expanded));
             return rr.Stack(rr.Comment(expr.name), expanded);
           }
@@ -95,7 +95,7 @@ export default function Railroad() {
   return (
     <div
       ref={svgRef}
-      className="h-full w-full overflow-auto rounded-lg bg-zinc-950 p-4 shadow-inner"
+      className="scrollbar h-full w-full overflow-auto rounded-lg bg-zinc-950 p-4 shadow-inner"
     />
   );
 }
