@@ -140,9 +140,7 @@ export default function MetaSyntaxPage() {
         <p className="text-muted-foreground">
           The generator creates random or structured example code snippets
           following the defined grammar. Only <code>Terminal</code> symbols are
-          used for actual text output, while delimiters like <code>()</code>,
-          <code>[]</code>, <code>{"{}"}</code>, and <code>&lt;&gt;</code> are
-          automatically closed to maintain syntactic balance.
+          used for actual text output.
         </p>
       </section>
     </div>
