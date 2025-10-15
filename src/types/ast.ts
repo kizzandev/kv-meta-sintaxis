@@ -1,5 +1,7 @@
+export type MetaRule = { type: "Rule"; name: string; expr: MetaExpr };
+
 export type MetaNode =
-  | { type: "Rule"; name: string; expr: MetaExpr } // The declared variable
+  | MetaRule // The declared variable
   | MetaExpr;
 
 export type MetaExpr =

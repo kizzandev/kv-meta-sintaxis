@@ -30,14 +30,16 @@ const handleEditorDidMount: OnMount = (
 };
 
 export default function MetaEditor() {
-  const { setCode } = useStore();
-  let code = useStore().code;
-  let tab = useEditorTab().tab;
+  const { code, setCode } = useStore();
+  const { tab, setTab } = useEditorTab();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      code = localStorage.getItem("code") ?? useStore().code;
-      tab = (localStorage.getItem("tab") as Tab) ?? useEditorTab().tab;
+      console.log("check");
+      const newCode = localStorage.getItem("code");
+      if (newCode) setCode(newCode);
+      const newTab = localStorage.getItem("tab") ?? "analysis";
+      setTab(newTab as Tab);
     }
   }, []);
 

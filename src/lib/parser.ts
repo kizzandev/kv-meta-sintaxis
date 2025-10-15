@@ -31,7 +31,7 @@ export function parseMetaSyntax(source: string): MetaNode[] {
     return tokens[pos++];
   }
   function expect(t: string) {
-    if (peek() !== t) throw new Error(`Expected '${t}' but got '${peek()}'`);
+    // if (peek() !== t) throw new Error(`Expected '${t}' but got '${peek()}'`);
     consume();
   }
 

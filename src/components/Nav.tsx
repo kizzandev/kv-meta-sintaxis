@@ -22,12 +22,12 @@ export default function Nav() {
     { id: "generator", label: "Generate" },
   ];
 
-  const { setTab } = useEditorTab();
-  let tab = useEditorTab().tab;
+  const { tab, setTab } = useEditorTab();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      tab = (localStorage.getItem("tab") as Tab) ?? useEditorTab().tab;
+      const newTab = localStorage.getItem("tab") ?? "analysis";
+      setTab(newTab as Tab);
     }
   }, []);
 

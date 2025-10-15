@@ -6,14 +6,15 @@
 
 **KV Meta-Sintaxis** is a browser-based tool that lets language designers **edit**, **visualize**, **analyze**, and **generate examples** from their own _meta-syntax_ definitions.
 
-| Notation                            | Definition                        |
-| ----------------------------------- | --------------------------------- |
-| `:`                                 | Define rule                       |
-| `\|`                                | Sequence of alternatives (one of) |
-| `{}`                                | Repetition (zero or more)         |
-| `[]`                                | Optional                          |
-| `()`                                | Grouping                          |
-| `CAPITALIZED`<br/>or<br/>`"quoted"` | Terminal                          |
+| Notation                            | Definition                           |
+| ----------------------------------- | ------------------------------------ |
+| `:`                                 | Define rule                          |
+| `\|`                                | Sequence of alternatives (one of)    |
+| `{}`                                | Repetition (zero or more)            |
+| `[]`                                | Optional                             |
+| `()`                                | Grouping                             |
+| `CAPITALIZED`<br/>or<br/>`"quoted"` | Terminal                             |
+| `;`<br/>`/; ... ;/`                 | Inline comment<br/>Multiline comment |
 
 Example:
 
@@ -81,6 +82,6 @@ Contributions welcome!
 
 Source available © 2025 • _KV Meta-Sintaxis Project_
 
-## 
+##
 
 > Built with ❤️ by language designer, for language designers.
