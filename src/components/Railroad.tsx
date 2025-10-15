@@ -86,7 +86,7 @@ export default function Railroad() {
     svgRef.current.innerHTML = `
       <div class="text-zinc-200 font-semibold text-sm tracking-wide mb-4">
         ${entry.name.at(0)?.toUpperCase() + entry.name.slice(1).toLowerCase()}
-        <small title="Contibutions are welcomed!" class="text-rose-700 font-semibold text-sm tracking-wide mb-4">${"— Updating the code may break the site, please update your code on the Analyze tab"}</small>
+        <small class="text-zinc-400 text-xs tracking-wide mb-4">${"— Updating the code here may break the site, please update your code on the Analyze tab."}<br/>${"Contributions welcomed!"}</small>
       </div>
       ${diagram}
     `;

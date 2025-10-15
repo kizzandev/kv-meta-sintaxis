@@ -20,8 +20,11 @@ export default function Generator() {
   }, [code]);
 
   return (
-    <div className="scrollbar h-full w-full overflow-auto bg-zinc-950 p-4 font-mono text-sm text-zinc-100">
-      <pre>{pseudoCode}</pre>
-    </div>
+    <>
+      <small className="px-4 text-xs">Contributions welcomed!</small>
+      <div className="scrollbar h-full w-full overflow-auto bg-zinc-950 p-4 font-mono text-sm text-zinc-100">
+        <pre>{pseudoCode}</pre>
+      </div>
+    </>
   );
 }
