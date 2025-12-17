@@ -4,7 +4,6 @@ import { useEditorTab } from "@/hooks/useStore";
 import { Tab } from "@/types/tabs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -23,13 +22,6 @@ export default function Nav() {
   ];
 
   const { tab, setTab } = useEditorTab();
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const newTab = localStorage.getItem("tab") ?? "analysis";
-      setTab(newTab as Tab);
-    }
-  }, []);
 
   return (
     <nav className="flex gap-4">

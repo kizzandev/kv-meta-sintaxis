@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
 import { editor } from "monaco-editor";
 import Editor, { OnMount } from "@monaco-editor/react";
 
 import { useEditorTab, useStore } from "@/hooks/useStore";
 import { language, languageId } from "@/lib/editor";
-import { Tab } from "@/types/tabs";
 import Analysis from "@/components/Analysis";
 import Railroad from "@/components/Railroad";
 import Generator from "@/components/Generator";
@@ -31,16 +29,7 @@ const handleEditorDidMount: OnMount = (
 
 export default function MetaEditor() {
   const { code, setCode } = useStore();
-  const { tab, setTab } = useEditorTab();
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const newCode = localStorage.getItem("code");
-      if (newCode) setCode(newCode);
-      const newTab = localStorage.getItem("tab") ?? "analysis";
-      setTab(newTab as Tab);
-    }
-  }, []);
+  const { tab } = useEditorTab();
 
   return (
     <div className="flex h-full w-full flex-row">
