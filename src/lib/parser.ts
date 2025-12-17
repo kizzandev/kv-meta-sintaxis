@@ -36,7 +36,7 @@ export function parseMetaSyntax(source: string): MetaNode[] {
   }
 
   function parseRule(): MetaNode {
-    const name = consume(); // rule name
+    const name = consume();
     expect(":");
     const expr = parseExpression();
     return { type: "Rule", name, expr };
@@ -100,7 +100,7 @@ export function parseMetaSyntax(source: string): MetaNode[] {
     return { type: "NonTerminal", name: token };
   }
 
-  // Parse all rules
+
   const rules: MetaNode[] = [];
   while (pos < tokens.length) {
     if (!peek()) break;
