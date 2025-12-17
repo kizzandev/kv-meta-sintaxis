@@ -8,16 +8,15 @@ export const language: languages.IMonarchLanguage = {
   escapes: /\\(?:[abfnrtv\\"'])/,
 
   // The main tokenizer for our languages
-  tokenizer: {
+    tokenizer: {
     root: [
       [/^[a-z_áéíóúñ]+/, "type.identifier"],
       [/[a-z_áéíóúñ]+\s*/, { cases: { "@default": "identifier" } }],
 
       { include: "@whitespace" },
 
-      // Delimitors
+      // Delimiters
       [/[|{}()\[\]:]/, "annotation"],
-      [/[?]/, "number.float"],
 
       // TERMINALS
       [/[A-Z_ÁÉÍÓÚÑ]+/, "keyword"],
@@ -35,12 +34,14 @@ export const language: languages.IMonarchLanguage = {
     whitespace: [
       [/[ \t\r\n]+/, "white"],
       [/;.*$/, "comment"],
-      [/\/;/, { token: "comment", bracket: "@open", next: "@comment" }],
+      [/\/;/, { token: "comment.quote", bracket: "@open", next: "@comment" }],
     ],
 
     comment: [
-      [/;\//, { token: "comment", bracket: "@close", next: "@pop" }],
       [/[^;\/]+/, "comment"],
+      [/\/;/, { token: "comment.quote", bracket: "@open", next: "@push" }], // nested comment
+      [/;\//, { token: "comment.quote", bracket: "@close", next: "@pop" }],
+      [/./, "comment"],
     ],
   },
 };
