@@ -49,16 +49,16 @@ export default function Nav() {
       ))}
       <Link
         className={`${linkStyle} ${
-          lastPathSegment === "specs"
+          lastPathSegment === "howto"
             ? "bg-gray-800 text-white"
             : "text-gray-400"
         }`}
-        href={`/specs`}
+        href={`/howto`}
         onClick={() => {
           setTab("none" as Tab);
         }}
       >
-        {"Specs"}
+        {"How to"}
       </Link>
       {process.env.NODE_ENV === "development" ? (
         <Link
