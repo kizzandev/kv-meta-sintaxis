@@ -1,8 +1,6 @@
 import { MetaNode, MetaExpr } from "@/types/ast";
 
-// Helper to identify whitespace
 const isWhitespace = (char: string) => /\s/.test(char);
-// Helper to identify identifier chars (letters + specific accents as per original regex)
 const isIdChar = (char: string) => /[a-zA-Z_áéíóúñÁÉÍÓÚÑ]/.test(char);
 
 function tokenize(input: string): string[] {
@@ -13,26 +11,30 @@ function tokenize(input: string): string[] {
   while (cursor < length) {
     const char = input[cursor];
 
-    // 1. Skip Whitespace
     if (isWhitespace(char)) {
       cursor++;
       continue;
     }
 
-    // 2. Block Comments: /; ... ;/
     if (char === "/" && input[cursor + 1] === ";") {
-      cursor += 2; // skip start
+      let depth = 1;
+      cursor += 2;
       while (cursor < length) {
-        if (input[cursor] === ";" && input[cursor + 1] === "/") {
-          cursor += 2; // skip end
-          break;
+        if (input[cursor] === "/" && input[cursor + 1] === ";") {
+          depth++;
+          cursor += 2;
+        } else if (input[cursor] === ";" && input[cursor + 1] === "/") {
+          depth--;
+          cursor += 2;
+          if (depth === 0) break;
+        } else {
+          cursor++;
         }
-        cursor++;
       }
       continue;
     }
 
-    // 3. Line Comments: ; ... (until newline)
+
     if (char === ";") {
       while (cursor < length && input[cursor] !== "\n") {
         cursor++;
@@ -40,15 +42,12 @@ function tokenize(input: string): string[] {
       continue;
     }
 
-    // 4. String Literals: "..."
+
     if (char === '"') {
       let value = '"';
-      cursor++; // skip opening quote
+      cursor++; 
       while (cursor < length) {
         const next = input[cursor];
-        // Handle escaped quotes if needed, though original regex was simpler.
-        // Original: "(\\(?:[abfnrtv\\"'])|[^\\"]+)*"
-        // We'll just look for closing quote not preceded by backslash
         if (next === '"' && input[cursor - 1] !== "\\") {
           value += '"';
           cursor++;
@@ -61,14 +60,14 @@ function tokenize(input: string): string[] {
       continue;
     }
 
-    // 5. Structural Symbols
+
     if ("|{}()[]:".includes(char)) {
       tokens.push(char);
       cursor++;
       continue;
     }
 
-    // 6. Identifiers / Terminals
+
     if (isIdChar(char)) {
       let value = "";
       while (cursor < length && isIdChar(input[cursor])) {
@@ -79,7 +78,6 @@ function tokenize(input: string): string[] {
       continue;
     }
 
-    // 7. Unknown/Unmapped characters
     cursor++;
   }
 
