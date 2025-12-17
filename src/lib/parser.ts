@@ -1,22 +1,93 @@
 import { MetaNode, MetaExpr } from "@/types/ast";
 
-function preprocess(source: string): string {
-  return source.replace(/[\t \r]+/g, " ").trim();
-}
-
-const tokenPattern =
-  /"(\\(?:[abfnrtv\\"'])|[^\\"]+)*"|\/;[^;\/]*;\/|;.*[^$]|[a-z_áéíóú]+|[|{}()\[\]:]|[A-Z_ÁÉÍÓÚÑ]+/g;
+// Helper to identify whitespace
+const isWhitespace = (char: string) => /\s/.test(char);
+// Helper to identify identifier chars (letters + specific accents as per original regex)
+const isIdChar = (char: string) => /[a-zA-Z_áéíóúñÁÉÍÓÚÑ]/.test(char);
 
 function tokenize(input: string): string[] {
-  return Array.from(input.matchAll(tokenPattern))
-    .map((m) => m[0].trim())
-    .filter((a) => !a.startsWith(";") && !a.startsWith("/;"));
+  const tokens: string[] = [];
+  let cursor = 0;
+  const length = input.length;
+
+  while (cursor < length) {
+    const char = input[cursor];
+
+    // 1. Skip Whitespace
+    if (isWhitespace(char)) {
+      cursor++;
+      continue;
+    }
+
+    // 2. Block Comments: /; ... ;/
+    if (char === "/" && input[cursor + 1] === ";") {
+      cursor += 2; // skip start
+      while (cursor < length) {
+        if (input[cursor] === ";" && input[cursor + 1] === "/") {
+          cursor += 2; // skip end
+          break;
+        }
+        cursor++;
+      }
+      continue;
+    }
+
+    // 3. Line Comments: ; ... (until newline)
+    if (char === ";") {
+      while (cursor < length && input[cursor] !== "\n") {
+        cursor++;
+      }
+      continue;
+    }
+
+    // 4. String Literals: "..."
+    if (char === '"') {
+      let value = '"';
+      cursor++; // skip opening quote
+      while (cursor < length) {
+        const next = input[cursor];
+        // Handle escaped quotes if needed, though original regex was simpler.
+        // Original: "(\\(?:[abfnrtv\\"'])|[^\\"]+)*"
+        // We'll just look for closing quote not preceded by backslash
+        if (next === '"' && input[cursor - 1] !== "\\") {
+          value += '"';
+          cursor++;
+          break;
+        }
+        value += next;
+        cursor++;
+      }
+      tokens.push(value);
+      continue;
+    }
+
+    // 5. Structural Symbols
+    if ("|{}()[]:".includes(char)) {
+      tokens.push(char);
+      cursor++;
+      continue;
+    }
+
+    // 6. Identifiers / Terminals
+    if (isIdChar(char)) {
+      let value = "";
+      while (cursor < length && isIdChar(input[cursor])) {
+        value += input[cursor];
+        cursor++;
+      }
+      tokens.push(value);
+      continue;
+    }
+
+    // 7. Unknown/Unmapped characters
+    cursor++;
+  }
+
+  return tokens;
 }
 
 export function parseMetaSyntax(source: string): MetaNode[] {
-  const text = preprocess(source);
-
-  const tokens = tokenize(text);
+  const tokens = tokenize(source);
 
   let pos = 0;
 

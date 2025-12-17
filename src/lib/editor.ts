@@ -10,8 +10,8 @@ export const language: languages.IMonarchLanguage = {
   // The main tokenizer for our languages
   tokenizer: {
     root: [
-      [/^[a-z_áéíóú]+/, "type.identifier"],
-      [/[a-z_áéíóú]+\s*/, { cases: { "@default": "identifier" } }],
+      [/^[a-z_áéíóúñ]+/, "type.identifier"],
+      [/[a-z_áéíóúñ]+\s*/, { cases: { "@default": "identifier" } }],
 
       { include: "@whitespace" },
 
