@@ -1,1 +1,1 @@
-export type Tab = "analysis" | "railroad" | "generator" | "debug" | "none";
+export type Tab = "analysis" | "railroad" | "generator" | "debug" | "none" | "howto";

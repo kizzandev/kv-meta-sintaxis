@@ -49,10 +49,9 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/favicon.webp" type="image/webp" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} mx-[20px] mb-[20px] h-screen overflow-hidden antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} h-screen overflow-hidden antialiased`}
       >
-        <Header></Header>
-        <main className="flex h-full max-h-[90svh] flex-row text-gray-200">
+        <main className="h-full w-full text-gray-200">
           {children}
         </main>
       </body>

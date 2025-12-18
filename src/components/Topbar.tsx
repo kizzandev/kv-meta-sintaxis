@@ -17,8 +17,8 @@ export default function Header() {
   return (
     <header className="flex h-20 flex-row items-center justify-between">
       <Sides></Sides>
-      <Nav></Nav>
-      <Sides classNames="opacity-0 select-none"></Sides>
+      {/* <Nav></Nav> */}
+      {/* <Sides classNames="opacity-0 select-none"></Sides> */}
     </header>
   );
 }
