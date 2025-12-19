@@ -85,9 +85,9 @@ export default function NewSidebar() {
             )}
             {t.icon}
 
-            <div className="absolute bottom-full md:bottom-auto md:left-full md:ml-4 pointer-events-none hidden md:block">
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 md:mb-0 md:bottom-auto md:left-full md:translate-x-0 md:ml-4 pointer-events-none">
               <div
-                className="px-3.5 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] text-md font-bold tracking-wide rounded-xl opacity-0 -translate-y-2 md:-translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md whitespace-nowrap z-[100]"
+                className="px-3.5 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] text-md font-bold tracking-wide rounded-xl opacity-0 translate-y-2 md:translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md whitespace-nowrap z-[100]"
               >
                 <div className="absolute left-1/2 md:left-0 top-full md:top-1/2 -translate-x-1/2 -translate-y-0 md:-translate-y-1/2 w-2 h-2 bg-[#101010] border-r md:border-r-0 md:border-l border-b border-white/10 rotate-45" />
                 {t.label}
@@ -126,8 +126,8 @@ export default function NewSidebar() {
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
           </svg>
-          <div className="absolute bottom-full md:bottom-auto md:left-full md:ml-4 pointer-events-none hidden md:block">
-            <div className="px-3.5 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] text-md font-bold tracking-wide rounded-xl opacity-0 -translate-y-2 md:-translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md whitespace-nowrap z-[100]">
+          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 md:mb-0 md:bottom-auto md:left-full md:translate-x-0 md:ml-4 pointer-events-none">
+            <div className="px-3.5 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] text-md font-bold tracking-wide rounded-xl opacity-0 translate-y-2 md:translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md whitespace-nowrap z-[100]">
               <div className="absolute left-1/2 md:left-0 top-full md:top-1/2 -translate-x-1/2 -translate-y-0 md:-translate-y-1/2 w-2 h-2 bg-[#101010] border-r md:border-r-0 md:border-l border-b border-white/10 rotate-45" />
               {"Load Grammar"}
             </div>
@@ -150,8 +150,8 @@ export default function NewSidebar() {
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          <div className="absolute bottom-full md:bottom-auto md:left-full md:ml-4 pointer-events-none hidden md:block">
-            <div className="px-3.5 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] text-md font-bold tracking-wide rounded-xl opacity-0 -translate-y-2 md:-translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md whitespace-nowrap z-[100]">
+          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 md:mb-0 md:bottom-auto md:left-full md:translate-x-0 md:ml-4 pointer-events-none">
+            <div className="px-3.5 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] text-md font-bold tracking-wide rounded-xl opacity-0 translate-y-2 md:translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md whitespace-nowrap z-[100]">
               <div className="absolute left-1/2 md:left-0 top-full md:top-1/2 -translate-x-1/2 -translate-y-0 md:-translate-y-1/2 w-2 h-2 bg-[#101010] border-r md:border-r-0 md:border-l border-b border-white/10 rotate-45" />
               {"Save Grammar"}
             </div>
@@ -165,12 +165,15 @@ export default function NewSidebar() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
 
-          <div className="absolute bottom-full md:bottom-auto md:left-full md:ml-4 pointer-events-none hidden md:block">
+          <div className="absolute bottom-full right-0 mb-2 md:mb-0 md:bottom-auto md:left-full md:ml-4 pointer-events-none">
             <div
-              className="px-3.5 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] text-md font-bold tracking-wide rounded-xl opacity-0 -translate-y-2 md:-translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md whitespace-nowrap z-[100]"
+              className="px-4 py-2 bg-[#101010] border border-white/10 text-[#F5F5F5] rounded-xl opacity-0 translate-y-2 md:translate-y-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0 transition-all duration-300 shadow-2xl backdrop-blur-md z-[100] w-max max-w-[250px] md:max-w-none"
             >
-              <div className="absolute left-1/2 md:left-0 top-full md:top-1/2 -translate-x-1/2 -translate-y-0 md:-translate-y-1/2 w-2 h-2 bg-[#101010] border-r md:border-r-0 md:border-l border-b border-white/10 rotate-45" />
-              <span className="text-xs text-gray-400">{`KV Meta Sintaxis, kvzidev © ${new Date().getFullYear()}`}</span>
+              <div className="absolute right-4 md:right-auto md:left-0 top-full md:top-1/2 -translate-x-0 md:-translate-x-1/2 md:-translate-y-1/2 w-2 h-2 bg-[#101010] border-r md:border-r-0 md:border-l border-b border-white/10 rotate-45" />
+              <div className="relative flex flex-col gap-0.5">
+                <span className="text-xs font-bold tracking-wide">KV Meta Sintaxis</span>
+                <span className="text-[10px] text-gray-400 whitespace-nowrap">{`kvzidev © ${new Date().getFullYear()}`}</span>
+              </div>
             </div>
           </div>
         </button>

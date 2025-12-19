@@ -4,7 +4,7 @@ export const SIMPLE_EXAMPLE = `/;
 
 expresión   : igualdad  ; Inicio
 igualdad    : comparación {  ( "=" | "!="  ) comparación   }
-comparación : término     {  ( "<" | "<="  | ">="   | ">=" ) término }
+comparación : término     {  ( "<" | "<="  |  ">"   | ">=" ) término }
 término     : factor      {  ( "+" | "-"   ) factor }
 factor      : unario      {  ( "*" | "/"   ) unario }
 unario      : primario    |  ( "-" | "!"   ) unario
