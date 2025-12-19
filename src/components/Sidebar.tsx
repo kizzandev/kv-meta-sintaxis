@@ -58,7 +58,7 @@ const TABS: { id: Tab; label: string; icon: React.ReactNode }[] = [
   },
 ];
 
-export default function NewSidebar() {
+export default function Sidebar() {
   const { tab, setTab } = useEditorTab();
   const { code, setCode } = useStore();
 

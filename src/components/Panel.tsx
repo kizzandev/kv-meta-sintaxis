@@ -2,13 +2,13 @@
 
 import { useEditorTab } from "@/hooks/useStore";
 import { motion, AnimatePresence } from "motion/react";
-import NewAnalysis from "./NewAnalysis";
-import NewRailroad from "./NewRailroad";
-import NewGenerator from "./NewGenerator";
-import NewHowTo from "./NewHowTo";
+import Analysis from "./Analysis";
+import Railroad from "./Railroad";
+import Generator from "./Generator";
+import HowTo from "./HowTo";
 import Debug from "@/components/Debug";
 
-export default function NewPanel() {
+export default function Panel() {
   const { tab } = useEditorTab();
 
   return (
@@ -30,13 +30,13 @@ export default function NewPanel() {
             className="h-full overflow-auto scrollbar pr-2"
           >
             {tab === "howto" ? (
-              <NewHowTo />
+              <HowTo />
             ) : tab === "analysis" ? (
-              <NewAnalysis />
+              <Analysis />
             ) : tab === "railroad" ? (
-              <NewRailroad />
+              <Railroad />
             ) : tab === "generator" ? (
-              <NewGenerator />
+              <Generator />
             ) : tab === "debug" && process.env.NODE_ENV === "development" ? (
               <Debug />
             ) : (

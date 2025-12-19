@@ -1,6 +1,6 @@
 "use client";
 
-export default function NewHowTo() {
+export default function HowTo() {
   return (
     <div className="h-full space-y-10 pb-10">
       <section className="space-y-3">

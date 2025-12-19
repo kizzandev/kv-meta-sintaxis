@@ -36,7 +36,7 @@ const handleEditorDidMount: OnMount = (
   monaco.editor.setTheme("premiumTheme");
 };
 
-export default function NewEditor() {
+export default function CompEditor() {
   const { code, setCode } = useStore();
 
   return (

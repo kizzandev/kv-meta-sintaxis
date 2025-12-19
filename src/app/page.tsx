@@ -1,11 +1,11 @@
 "use client";
 
-import NewSidebar from "@/components/new/NewSidebar";
-import NewEditor from "@/components/new/NewEditor";
-import NewPanel from "@/components/new/NewPanel";
+import Sidebar from "@/components/Sidebar";
+import Editor from "@/components/Editor";
+import Panel from "@/components/Panel";
 import { motion } from "motion/react";
 
-export default function NewDesignPage() {
+export default function DesignPage() {
   return (
     <div className="relative flex flex-col h-screen w-full overflow-hidden bg-[#101010] text-[#F5F5F5]">
       <header className="h-14 md:h-16 flex items-center justify-between px-4 md:px-8 border-b border-white/5 bg-[#101010]/40 backdrop-blur-md z-50 flex-shrink-0">
@@ -48,7 +48,7 @@ export default function NewDesignPage() {
           animate={{ opacity: 1 }}
           className="z-40 order-2 md:order-1 flex-shrink-0"
         >
-          <NewSidebar />
+          <Sidebar />
         </motion.aside>
 
         <main className="flex-1 flex flex-col xl:flex-row gap-4 p-4 md:p-6 overflow-x-hidden xl:overflow-y-hidden z-10 order-1 md:order-2 h-full">
@@ -58,7 +58,7 @@ export default function NewDesignPage() {
             transition={{ delay: 0.1 }}
             className="flex-1 lg:flex-[1.4] min-w-0 h-[45%] lg:h-full"
           >
-            <NewEditor />
+            <Editor />
           </motion.div>
 
           <motion.div
@@ -67,7 +67,7 @@ export default function NewDesignPage() {
             transition={{ delay: 0.2 }}
             className="flex-1 min-w-0 h-[55%] lg:h-full"
           >
-            <NewPanel />
+            <Panel />
           </motion.div>
         </main>
       </div>
