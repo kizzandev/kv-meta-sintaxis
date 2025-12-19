@@ -11,7 +11,7 @@ interface AppState {
 export const useStore = create<AppState>()(
   persist(
     (set) => ({
-      code: '/;\n  ¡Comentario!\n;/\n\nexpresión   : igualdad  ; Inicio\nigualdad    : comparación {  ( "=" | "!="  ) comparación   }\ncomparación : término     {  ( "<" | "<="  | ">="   | ">=" ) término }\ntérmino     : factor      {  ( "+" | "-"   ) factor }\nfactor      : unario      {  ( "*" | "/"   ) unario }\nunario      : primario    |  ( "-" | "!"   ) unario\nprimario    : NÚMERO      | "(" expresión ")"\n',
+      code: '/;\n  ¡Comentario!\n;/\n\nexpresión   : igualdad  ; Inicio\nigualdad    : comparación {  ( "=" | "!="  ) comparación   }\ncomparación : término     {  ( "<" | "<="  |  ">"   | ">=" ) término }\ntérmino     : factor      {  ( "+" | "-"   ) factor }\nfactor      : unario      {  ( "*" | "/"   ) unario }\nunario      : primario    |  ( "-" | "!"   ) unario\nprimario    : NÚMERO      | "(" expresión ")"\n',
       setCode: (code) => set({ code }),
     }),
     {
