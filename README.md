@@ -1,8 +1,8 @@
-# KV Meta-Sintaxis Web App 🧩
+# KV Meta-Sintaxis Web App
 
 **Interactive web tool for designing, visualizing, and analyzing the meta-syntax of custom programming languages.**
 
-## ✨ Overview
+## Overview
 
 **KV Meta-Sintaxis** is a browser-based tool that lets language designers **edit**, **visualize**, **analyze**, and **generate examples** from their own _meta-syntax_ definitions.
 
@@ -32,7 +32,7 @@ unario      : primario    |  ( "-" | "!"   ) unario
 primario    : NÚMERO      | "(" expresión ")"
 ```
 
-## 💻 Contributing
+## Contributing
 
 Contributions welcome!
 
@@ -63,7 +63,7 @@ Contributions welcome!
    git push -u origin feature/my-feature
    ```
 
-6. Open a pull request 🎉
+6. Open a pull request
    - Go to your forked repository
    - Create new Pull Request
    - Provide a clear title and description
@@ -78,7 +78,7 @@ Contributions welcome!
 8. Merged! (maybe)
    - Once approved, your Pull Request may be merged into the main project
 
-## 🧾 About the code
+## About the code
 
 Source available © 2025 • _KV Meta-Sintaxis Project_
 
